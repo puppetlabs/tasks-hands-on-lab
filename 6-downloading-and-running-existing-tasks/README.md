@@ -45,6 +45,31 @@ node1:
 
 Ran on 1 node in 0.68 seconds
 ```
+# Install the package task using librarian-puppet
+
+Tasks are packaged into Puppet modules.  You can use librarian-puppet to install modules that contain tasks, 
+such as the package module.
+
+```
+gem install librarian-puppet
+```
+
+Create a Puppetfile with the following content:
+
+```
+forge "https://forgeapi.puppetlabs.com"
+
+mod 'puppetlabs-package',
+  :git => "https://github.com/puppetlabs/puppetlabs-package.git"
+```
+
+We then run librarian-puppet to download the modules to the ```./modules``` folder.
+
+```
+librarian-puppet install
+```
+
+This should create a ```./modules``` folder if one doesn't already exist and download the ```package``` module.
 
 # Use package task to check status of package
 
