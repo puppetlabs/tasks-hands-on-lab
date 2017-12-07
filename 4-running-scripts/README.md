@@ -52,6 +52,24 @@ Ran on 1 node in 0.64 seconds
 
 `bashcheck` is a bash script, but `bolt` will happily upload and run any script which is runnable on the specified nodes. Just set the shebang line correctly and you can run Python scripts, Ruby scripts, Perl scripts or anything else.
 
+# Enable root ssh access
+
+For some tasks and plans bolt needs root access to systems (e.g. interacting with puppet). You can easily enable root login by using bolt:
+
+```
+bolt script run enable_root_on_vagrant.sh -n <nodes>
+node1:
+
+activating root login in ssh config
+restarting sshd service
+copying vagrant authorized_key file
+set owner for root .ssh
+
+Redirecting to /bin/systemctl restart sshd.service
+
+Ran on 1 node in 0.66 seconds
+```
+
 
 # Test Windows external connectivity 
 
