@@ -146,6 +146,25 @@ Make sure you can log into all the nodes before moving on. You may have to remov
 
 When passing nodes to `bolt` in the next section you will use `--nodes 127.0.0.1:32768,127.0.0.1:32769`, replacing the ports with those you see when you run the `docker-compose ps` command shown above.
 
+# Puppet Learning VM
+
+The learning vm has container based targets to use for testing bolt. Start these by running the setup script to create three target containers `hack1.puppet.vm`, `hack1.puppet.vm` and `hack1.puppet.vm`.
+
+```
+$ usr/src/puppet-quest-guide/tests/scripts/setup puppethack
+```
+
+verify you can log into the nodes as the root `user` with the password `puppet`. You can specify this in bolt by including the username and password in the target uri, `root:puppet@hack1.puppet.vm`. You'll also have to pass the `--insecure` and `--tmpdir` flags to bolt. To avoid this create a `bolt.yml` file
+
+```
+# /root/.puppetlabs/bolt.yml
+---
+ssh:
+  insecure: true
+  tmpdir: '/root/'
+```
+
+
 # Next steps
 
 Now you have nodes with which to experiment with `bolt` you can move on to:

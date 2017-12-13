@@ -31,7 +31,7 @@ These exercises will use the [task-modules](https://github.com/puppetlabs/task-m
 ```
 mkdir ~/.puppetlabs
 cd ~/.puppetlabs
-git clone git@github.com:puppetlabs/task-modules.git
+git clone https://github.com/puppetlabs/task-modules.git
 ```
 
 Now open `~/.puppetlabs/bolt.yml` and set up the bolt module path. The module path will include both modules commited directly in `site` and those managed by the puppetfile in `modules`.
@@ -50,7 +50,7 @@ modulepath: "~/.puppetlabs/task-modules/site:~/.puppetlabs/task-modules/modules"
 The [`install_puppet` task](https://github.com/puppetlabs/task-modules/blob/master/site/install_puppet/tasks/init.sh) in task-modules contains a task to install the puppet agent package on a node. This task need to run as root so if you're not logging in as root with vagrant you'll need to tell bolt to sudo to root with `--run-as root`
 
 ```
-bolt task run install_puppet -n node1 --run_as root
+bolt task run install_puppet -n node1 --run-as root
 ```
 
 This task may take a while and will produce a lot of output when it's done.

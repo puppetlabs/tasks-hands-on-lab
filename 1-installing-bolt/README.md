@@ -34,7 +34,7 @@ You can check everything has been installed correctly by running `bolt --help`.
 xcode-select --install
 ```
 
-macOS comes with Ruby already installed so you should be able to install `bolt` using the built-in `gem` tool: 
+macOS comes with Ruby already installed so you should be able to install `bolt` using the built-in `gem` tool:
 
 ```
 gem install bolt
@@ -66,6 +66,14 @@ gem install bolt
 ```
 apt-get install -y make gcc ruby-dev
 gem install bolt
+```
+
+# Puppet Learning VM
+
+If you're having trouble installing bolt locally you can download the [Puppet Learning VM](https://puppet.com/download-learning-vm) and complete the rest of the exercises there. After you have the learning vm running update to the latest version of bolt.
+
+```
+gem update bolt
 ```
 
 # Next steps
