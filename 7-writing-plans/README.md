@@ -27,11 +27,9 @@ Plans allow for linking a set of commands, scripts and tasks together; and to pa
 Let's create a simple plan which takes a list of nodes and runs a command on them. Save the following as `modules/exercise7/plans/command.pp`:
 
 ```puppet
-plan exercise7::command(String $nodes) {
+plan exercise7::command (String $nodes) {
   $nodes_array = split($nodes, ',')
-  run_command ("uptime",
-    $nodes_array,
-  )
+  run_command("uptime", $nodes_array)
 }
 ```
 
@@ -105,13 +103,14 @@ Ran on 1 node in 0.39 seconds
 Now lets write a plan that uses our task. Save the following as `modules/exercise7/plans/writeread.pp`:
 
 ```puppet
-plan exercise7::writeread(
+plan exercise7::writeread (
   String $nodes,
   String $filename,
   String $message = 'Hello',
 ) {
   $nodes_array = split($nodes, ',')
-  run_task("exercise7::write",
+  run_task(
+    'exercise7::write',
     $nodes_array,
     filename => $filename,
     message  => $message,
