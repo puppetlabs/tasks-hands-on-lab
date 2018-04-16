@@ -4,19 +4,17 @@
 
 > **Time**: Approximately 10 minutes
 
-In this exercise you will discover Puppet Plans and how to run them with `bolt`.
+In this exercise you will discover Puppet Plans and how to run them with Bolt.
 
 - [Write a plan using run_command](#write-a-plan-using-run_command)
 - [Write a plan using run_task](#write-a-plan-using-run_task)
 
 # Prerequisites
 
-For the following exercises you should already have `bolt` installed and have a few nodes (either Windows or Linux) available to run commands against. The following guides will help:
-
 1. [Installing Bolt](../1-installing-bolt)
 1. [Acquiring nodes](../2-acquiring-nodes)
 
-It is also useful to have some familiarity with running commands with `bolt` so you understand passing nodes and credentials. The following exercise is recommended:
+It is also useful to have some familiarity with running commands with Bolt so you understand passing nodes and credentials. The following exercise is recommended:
 
 1. [Running Commands](../3-running-commands)
 
@@ -140,7 +138,7 @@ plan exercise7::writeread (
 
 Note that:
 
-* The plan takes three arguments, one of which (`message`) has a default value. We'll see shortly how `bolt` uses that to validate user input.
+* The plan takes three arguments, one of which (`message`) has a default value. We'll see shortly how Bolt uses that to validate user input.
 * We use the Puppet `split` function to support passing a comma-separated list of nodes. Plans are just Puppet, so you can use any of the available [functions](https://docs.puppet.com/puppet/latest/function.html) or [native data types](https://docs.puppet.com/puppet/latest/lang_data_type.html).
 * First we run our `exercise7::write` task from above, setting the arguments for the task to the values passed to the plan. This writes out a file in the `/tmp` directory.
 * We then run a command directly from the plan, in this case to output the content we just wrote to the file in the above task.
@@ -156,10 +154,10 @@ Note:
 * `message` is optional. If it's not passed it will use the default value from the plan.
 * When running multiple steps in a plan only the last step will generate output.
 
-Plans should be used whenever you want to run several commands together, often based on the output of previous commands and across multiple nodes. For instance removing a node from a load balancer before deploying the new version of the application, or clearing a cache after re-indexing a search engine.
+Use plans when you want to run several commands together, often based on the output of previous commands and across multiple nodes. For instance to remove a node from a load balancer before you deploy the new version of the application, or to clear a cache after you re-index a search engine.
 
 # Next steps
 
-Now that you know how to download and run third party tasks with `bolt` you can move on to:
+Now that you know how to download and run third party tasks with Bolt you can move on to:
 
 1. [Writing advanced Tasks](../8-writing-advanced-tasks)

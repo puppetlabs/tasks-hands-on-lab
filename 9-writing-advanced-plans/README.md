@@ -12,12 +12,12 @@ In this exercise you will further explore Puppet Plans:
 
 # Prerequisites
 
-For the following exercises you should already have `bolt` installed and have a few nodes (either Windows or Linux) available to run commands against. The following guides will help:
+For the following exercises you should already have Bolt installed and have a few nodes (either Windows or Linux) available to run commands against. The following guides will help:
 
 1. [Installing Bolt](../1-installing-bolt)
 1. [Acquiring nodes](../2-acquiring-nodes)
 
-It is also useful to have some familiarity with writing and running Plans with `bolt`. The following exercise is recommended:
+It is also useful to have some familiarity with writing and running Plans with Bolt. The following exercise is recommended:
 
 1. [Running Commands](../7-writing-plans)
 
@@ -256,13 +256,13 @@ The `_catch_errors` argument can be passed to `run_command`, `run_task`, `run_sc
 
 # Next steps
 
-Congratulations, you should now have a basic understanding of `bolt` and Puppet Tasks. Here are a few ideas for what to do next:
+Congratulations, you should now have a basic understanding of Bolt and Puppet Tasks. Here are a few ideas for what to do next:
 
 * Explore content on the [Puppet Tasks Playground](https://github.com/puppetlabs/tasks-playground)
 * Get reusable tasks and plans from the [Task Modules Repo](https://github.com/puppetlabs/task-modules)
 * Search Puppet Forge for [Tasks](https://forge.puppet.com/modules?with_tasks=yes)
 * Start writing Tasks for one of your existing Puppet modules
-* Head over to the [Puppet Slack](https://slack.puppet.com/) and talk to the `bolt` developers and other users
+* Head over to the [Puppet Slack](https://slack.puppet.com/) and talk to the Bolt developers and other users
 * Try out the [Puppet Development Kit](https://puppet.com/download-puppet-development-kit) [(docs)](https://docs.puppet.com/pdk/latest/index.html) which has a few features to make authoring tasks even easier
 
 [puppetlabs-stdlib]: https://github.com/puppetlabs/puppetlabs-stdlib
