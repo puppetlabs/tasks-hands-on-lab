@@ -43,21 +43,21 @@ bolt command run <command> --nodes <nodes> --user <user> --password <password>
 
 2. Run the 'uptime' command on multiple nodes by passing a comma-separated list. If you are using existing nodes on your system, replace `node1,node2,node3` with addresses for your nodes. If you get an error about `Host key verification` run the rest of the examples with the `--no-host-key-check` flag to disable host key verification.
 
-```
-$ bolt command run uptime --nodes node1,node2,node3
-Started on node1...
-Started on node2...
-Started on node3...
-Finished on node1:
-  STDOUT:
-     21:20:13 up 13 min,  0 users,  load average: 0.20, 0.06, 0.05
-Finished on node3:
-  STDOUT:
-     21:20:14 up 12 min,  0 users,  load average: 0.00, 0.01, 0.02
-Finished on node2:
-  STDOUT:
-     21:20:14 up 13 min,  0 users,  load average: 0.00, 0.01, 0.05$
-```
+    ```
+    $ bolt command run uptime --nodes node1,node2,node3
+    Started on node1...
+    Started on node2...
+    Started on node3...
+    Finished on node1:
+      STDOUT:
+         21:20:13 up 13 min,  0 users,  load average: 0.20, 0.06, 0.05
+    Finished on node3:
+      STDOUT:
+         21:20:14 up 12 min,  0 users,  load average: 0.00, 0.01, 0.02
+    Finished on node2:
+      STDOUT:
+         21:20:14 up 13 min,  0 users,  load average: 0.00, 0.01, 0.05$
+    ```
 
 3. Create an inventory file to store information about your nodes and refer to them as a group.  Later exercises will refer to the default group `all`. For more information on how to set up other named groups, see the 
     [Inventory File docs](https://puppet.com/docs/bolt/0.x/inventory_file.html).
@@ -123,5 +123,3 @@ bolt command run <command> --no-ssl --nodes winrm://<node>,winrm://<node> --user
 Now that you know how to use Bolt to run adhoc commands you can move on to:
 
 [Running Scripts](../4-running-scripts)
-
-[inventory file]: https://puppet.com/docs/bolt/0.x/inventory_file.html

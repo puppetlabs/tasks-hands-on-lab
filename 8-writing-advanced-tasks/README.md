@@ -20,6 +20,7 @@ Task metadata files describe task parameters, validate input, and control tasks 
 Write a simple task that formats the parameters a user gives it.
 
 1. Save the following file to `modules/exercise8/tasks/great_metadata.py`:
+
     ```
     #!/usr/bin/env python
     
@@ -94,7 +95,7 @@ Write a simple task that formats the parameters a user gives it.
     ...
     ```
 
-2. Run 'bolt task show [TASK NAME] ' to view the parameters that your task uses.
+2. Run `bolt task show <task-name>` to view the parameters that your task uses.
 
     ```
     $ bolt task show exercise8::great_metadata --modulepath ./modules

@@ -62,7 +62,7 @@ Create a simple plan that runs a command on a list of nodes.
 
 
 # Write a plan using run_task
-Create a task and then create a plan that uses the task. .
+Create a task and then create a plan that uses the task.
 
 1. Save the following task as `modules/exercise7/tasks/write.sh`. The task accepts a filename and some content and saves a file to 1`/tmp`.
     
@@ -150,7 +150,7 @@ Create a task and then create a plan that uses the task. .
     bolt plan run exercise7::writeread filename=hello message=world nodes=<nodes> --modulepath ./modules
     ```
 
-    Note:
+    **Note:**
     
     * `message` is optional. If it's not passed it uses the default value from the plan.
     * When running multiple steps in a plan only the last step will generate output.

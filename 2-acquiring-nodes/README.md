@@ -58,18 +58,18 @@ The attached Vagrantfile configures three CentOS 7 nodes and a Windows (Nano Ser
 
 3. Generate the SSH configuration so Bolt knows how to authenticate with the SSH daemon. The following command will output the required details.
 
-```
-vagrant ssh-config
-```
-
-You can save that so it will be automatically picked up by most SSH clients, including Bolt. This uses the ability to specify hosts along with their connection details in a [configuration file](https://linux.die.net/man/5/ssh_config).
-
-```
-mkdir ~/.ssh
-vagrant ssh-config | sed /StrictHostKeyChecking/d | sed /UserKnownHostsFile/d >> ~/.ssh/config
-```
-
-By saving this SSH configuration file, you can use the node name, rather than the IP address. When passing nodes to Bolt in the following exercises with Linux you will use `--nodes node1,node2`.
+    ```
+    vagrant ssh-config
+    ```
+    
+    You can save that so it will be automatically picked up by most SSH clients, including Bolt. This uses the ability to specify hosts along with their connection details in a [configuration file](https://linux.die.net/man/5/ssh_config).
+    
+    ```
+    mkdir ~/.ssh
+    vagrant ssh-config | sed /StrictHostKeyChecking/d | sed /UserKnownHostsFile/d >> ~/.ssh/config
+    ```
+    
+    By saving this SSH configuration file, you can use the node name, rather than the IP address. When passing nodes to Bolt in the following exercises with Linux you will use `--nodes node1,node2`.
 
 4. Make sure you can SSH into all of your nodes. If you've used the vagrant nodes before you may have to remove entries from `~/.ssh/known_hosts`.
 

@@ -74,7 +74,7 @@ If you're targeting Windows nodes then you might prefer to implement the task in
     bolt task run exercise5::print message="hello powershell" --nodes $WINNODE --modulepath ./modules
     ```
 
-    Note:
+    **Note:**
     
     * The name of the file on disk (minus any file extension) translates to the name of the task when run via Bolt, in this case `print`.
     * The name of the module (directory) is also used to find the relevant task, in this case `exercise5`.
@@ -110,7 +110,7 @@ Note that Bolt assumes that the required runtime is already available on the tar
         sys.exit(1)
     ```
 
-2. Run the exercise5 task.
+2. Run the task using the command `bolt task run <task-name> <task options>`.
 
     ```
     $ bolt task run exercise5::gethost host=google.com --nodes all --modulepath ./modules

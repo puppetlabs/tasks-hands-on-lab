@@ -28,25 +28,25 @@ Run the [bashcheck](https://github.com/hannob/bashcheck) script to check on Shel
     curl -O https://raw.githubusercontent.com/hannob/bashcheck/master/bashcheck
     ```
 
-2. Run the script using the command `bolt script run <script-name>`. This uploads the script to the nodes you have specified. 
+2. Run the script using the command `bolt script run <script-name> <script options>`. This uploads the script to the nodes you have specified. 
 
-```
-$ bolt script run bashcheck -n all
-Started on node1...
-Finished on node1:
-  STDOUT:
-    Testing /usr/bin/bash ...
-    Bash version 4.2.46(2)-release
-
-    Variable function parser pre/suffixed [(), redhat], bugs not exploitable
-    Not vulnerable to CVE-2014-6271 (original shellshock)
-    Not vulnerable to CVE-2014-7169 (taviso bug)
-    Not vulnerable to CVE-2014-7186 (redir_stack bug)
-    Test for CVE-2014-7187 not reliable without address sanitizer
-    Not vulnerable to CVE-2014-6277 (lcamtuf bug #1)
-    Not vulnerable to CVE-2014-6278 (lcamtuf bug #2)
-Ran on 1 node in 0.41 seconds
-```
+    ```
+    $ bolt script run bashcheck --nodes all
+    Started on node1...
+    Finished on node1:
+      STDOUT:
+        Testing /usr/bin/bash ...
+        Bash version 4.2.46(2)-release
+    
+        Variable function parser pre/suffixed [(), redhat], bugs not exploitable
+        Not vulnerable to CVE-2014-6271 (original shellshock)
+        Not vulnerable to CVE-2014-7169 (taviso bug)
+        Not vulnerable to CVE-2014-7186 (redir_stack bug)
+        Test for CVE-2014-7187 not reliable without address sanitizer
+        Not vulnerable to CVE-2014-6277 (lcamtuf bug #1)
+        Not vulnerable to CVE-2014-6278 (lcamtuf bug #2)
+    Ran on 1 node in 0.41 seconds
+    ```
 
 
 
@@ -61,7 +61,7 @@ Create a simple PowerShell script to test connectivity to a known website.
     Test-Connection -ComputerName "example.com" -Count 3 -Delay 2 -TTL 255 -BufferSize 256 -ThrottleLimit 32
     ```
 
-2. Run the script using the command `bolt script run`. This uploads the script to the nodes you have specified, ensures its executable, runs it, and returns output to the console.
+2. Run the script using the command `bolt script run <script-name> <script options>`. This uploads the script to the nodes you have specified, ensures its executable, runs it, and returns output to the console.
 
     ```
     $ bolt script run testconnection.ps1 -n $WINNODE
