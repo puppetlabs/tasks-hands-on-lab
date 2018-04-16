@@ -12,6 +12,7 @@ In this exercise you will write your first Puppet Tasks for use with Bolt.
 - [Write your first task in Python](#write-your-first-task-in-python)
 
 # Prerequisites
+Complete the following before you start this lesson:
 
 1. [Installing Bolt](../1-installing-bolt)
 1. [Setting up test nodes](../2-acquiring-nodes)

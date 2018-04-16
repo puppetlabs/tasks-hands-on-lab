@@ -14,6 +14,7 @@ In this exercise you will explore existing tasks, including several tasks that t
 - [The Tasks Playground](#more-tips-tricks-and-ideas-on-the-tasks-playground)
 
 # Prerequisites
+Complete the following before you start this lesson:
 
 1. [Installing Bolt](../1-installing-bolt)
 1. [Setting up test nodes](../2-acquiring-nodes)

@@ -6,11 +6,11 @@
 
 You can use Bolt to run arbitrary commands on a set of remote hosts. Let's see that in practice before we move on to more advanced features. Choose the excercise based on the operating system of your test nodes.
 
-
 - [Running shell commands on Linux nodes](#running-shell-commands-on-linux-nodes)
 - [Running PowerShell commands on Windows nodes](#running-powershell-commands-on-windows-nodes)
 
 # Prerequisites
+Complete the following before you start this lesson:
 
 1. [Installing Bolt](../1-installing-bolt)
 1. [Setting up test nodes](../2-acquiring-nodes)

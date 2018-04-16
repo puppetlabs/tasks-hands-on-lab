@@ -10,6 +10,7 @@ In this exercise you will run existing scripts against remote nodes using Bolt.
 - [Test Windows external connectivity](#test-windows-external-connectivity)
 
 # Prerequisites
+Complete the following before you start this lesson:
 
 1. [Installing Bolt](../1-installing-bolt)
 1. [Setting up test nodes](../2-acquiring-nodes)
