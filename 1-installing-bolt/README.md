@@ -4,13 +4,13 @@
 
 > **Time**: Approximately 10 minutes
 
-In this exercise you will install Bolt so you can get started with Puppet Tasks. Following the instructions for your operating system.
+In this exercise you will install Bolt so you can get started with Puppet Tasks. Follow the instructions for your operating system.
 
 - [Installing Bolt on Windows](#installing-bolt-on-windows)
-- [Installing Bolt on macOS](#Install-Bolt-on-Mac-OS-X)
-- [Installing Bolt on Debian or Ubuntu](#Install-Bolt-from-apt-repositories-on-Debian-or-Ubuntu)
-- [Installing Bolt on RHEL or SLES](#Install-Bolt-from-yum-repositories-on-RHEL-or-SLES)
-- [Installing Bolt as a gem](#Install-Bolt-as-a-gem)
+- [Installing Bolt on macOS](#install-bolt-on-mac-os-x)
+- [Installing Bolt on Debian or Ubuntu](#install-bolt-from-apt-repositories-on-debian-or-ubuntu)
+- [Installing Bolt on RHEL or SLES](#install-bolt-from-yum-repositories-on-rhel-or-sles)
+- [Installing Bolt as a gem](#install-bolt-as-a-gem)
 
 # Prerequisites
 
@@ -50,7 +50,7 @@ Packaged versions of Bolt are available for Debian 8 and 9 and Ubuntu 14.04 and 
 
 The Puppet repository for the APT package management system is [https://apt.puppet.com](https://apt.puppet.com). Packages are named using the convention `<PLATFORM_VERSION>-release-<VERSION CODE NAME>.deb`. For example, the release package for Puppet 5 Platform on  8 “Jessie” is `puppet5-release-jessie.deb`.
 
-**Note:** These packages require you to download the Puppet 5 Platform. To install only the Bolt package you can install the packages directly as well.
+**Note:** These packages include the Puppet 5 Platform. To install only the Bolt package you can install the packages directly as well.
 
 1.  Download and install the software and its dependencies. Use the commands appropriate to your system.
     -   Debian 8
@@ -138,7 +138,7 @@ The Puppet repository for the YUM package management system is [http://yum.puppe
 
 Install Ruby 2.3 or above and Bolt.
 
-If Ruby is already included in your operating system, verify that it is version 2.3 or above.
+If Ruby is already included in your operating system, verify that it is version 2.3 or above. Run the command `ruby --version`.
 
 1.  To install the dependencies required to install Bolt, run the command that corresponds to your operating system.
     -   For Fedora 27

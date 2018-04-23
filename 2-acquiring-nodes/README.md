@@ -96,7 +96,7 @@ Using Docker we can quickly launch a number of ephemeral SSH servers. To make th
 
 2. Launch a single SSH server in the background: `docker-compose up --detach`. To launch more SSH servers, run:  `docker-compose up --scale ssh=3 --detach`.
 
-3. View a list of running containers: `docker-compose ps`. The result should be simliar to:  
+3. View a list of running containers: `docker-compose ps`. The result should be similar to:  
     ```
             Name                 Command        State           Ports
     -------------------------------------------------------------------------

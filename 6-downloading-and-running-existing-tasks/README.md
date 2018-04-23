@@ -34,7 +34,7 @@ These exercises use the [task-modules](https://github.com/puppetlabs/task-module
     git clone git@github.com:puppetlabs/task-modules.git
     ```
 
-2. Open `~/.puppetlabs/bolt.yml` and set up the bolt module path. The module path includes both modules commited directly in `site` and those managed by the puppetfile in `modules`.
+2. Open `~/.puppetlabs/bolt.yml` and set up the bolt module path. The module path includes both modules committed directly in `site` and those managed by the puppetfile in `modules`.
 
     ```
     ---
@@ -75,7 +75,7 @@ Committing modules directly to the control repo is useful while you develop new 
 
 # Inspect installed tasks
 
-- Run the 'bolt task show' command to view a list of the tasks installed in the previous exersize.
+- Run the 'bolt task show' command to view a list of the tasks installed in the previous exercise.
 
     ```
     $ bolt task show
@@ -124,7 +124,7 @@ Committing modules directly to the control repo is useful while you develop new 
     - provider: Optional[String[1, default]]
         The provider to use to manage or inspect the package, defaults to the system package manager
     ```
-2.  Using parameters for the package task, run the bash package and check on the status:
+2.  Using parameters for the package task, check on the status of the bash package:
 
     ```
     $ bolt task run package action=status name=bash --nodes all

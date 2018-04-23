@@ -22,7 +22,7 @@ Run the [bashcheck](https://github.com/hannob/bashcheck) script to check on Shel
 **Tip:** You likely already have a set of scripts that you run to accomplish common systems administration tasks. Bolt makes it easy to reuse your scripts without modification and to run them quickly across a large number of nodes. Feel free to replace the bashcheck script in this exercise with one of your own. Just set the shebang line correctly and you can run scripts in Python, Ruby, Perl or another scripting language.
 
 
-1. Download `bashcheck` using `wget` or similar:
+1. Download `bashcheck` using `curl`, 'wget',  or similar:
 
     ```
     curl -O https://raw.githubusercontent.com/hannob/bashcheck/master/bashcheck

@@ -14,7 +14,7 @@ Complete the following before you start this lesson:
 1. [Writing tasks](../5-writing-tasks)
 
 # About task metadata
-Task metadata files describe task parameters, validate input, and control tasks are executed.  Adding metadata to your tasks helps others use them.  You write metadata for a task in JSON and save it with the same name as your task. For example, if you write a task called `great_metadata.py` its corresponding metadata file is named `great_metadata.json`.  
+Task metadata files describe task parameters, validate input, and control how tasks are executed.  Adding metadata to your tasks helps others use them.  You write metadata for a task in JSON and save it with the same name as your task. For example, if you write a task called `great_metadata.py` its corresponding metadata file is named `great_metadata.json`.  
 
 # Writing your first task with metadata
 Write a simple task that formats the parameters a user gives it.
@@ -156,7 +156,7 @@ Bolt can use the types that you have specified in your metadata to validate para
 
 # Creating a task that supports no-operation mode (noop)
 
-You can write tasks that support that no-operation mode (noop). You use noop to see what changes changes a task would make, but without taking any action.
+You can write tasks that support no-operation mode (noop). You use noop to see what changes a task would make, but without taking any action.
 
 1. Create the metadata for the new task and save it to `modules/exercise8/tasks/file.json`:
 

@@ -40,7 +40,7 @@ This exercise uses `sh`, but you can use Perl, Python, Lua, or JavaScript or any
     echo $(hostname) received the message: $PT_message
     ```
 
-2. Run the exercise5 task. Note the `message` argument. This will be expanded to the `PT_message` environment variable expected by our task. By naming parameters explictly it's easier for others to use your tasks.
+2. Run the exercise5 task. Note the `message` argument. This will be expanded to the `PT_message` environment variable expected by our task. By naming parameters explicitly it's easier for others to use your tasks.
 
     ```
     bolt task run exercise5 message=hello --nodes all --modulepath ./modules
