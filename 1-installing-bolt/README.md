@@ -103,7 +103,7 @@ Packaged versions of Bolt are available for Red Hat Enterprise Linux 6 and 7, SU
 
 The Puppet repository for the YUM package management system is [http://yum.puppet.com/puppet5/](http://yum.puppet.com/puppet5/) Packages are named using the convention `<PLATFORM_NAME>-release-<OS ABBREVIATION>-<OS VERSION>.noarch.rpm`. For example, the release package for Puppet 5 Platform on Linux 7 is `puppet5-release-el-7.noarch.rpm`.
 
-**Note:** These packages require you to download the Puppet 5 Platform. To install only the Bolt package you can install the packages directly as well.
+**Note:** These packages include the Puppet 5 Platform. To install only the Bolt package you can install the packages directly as well.
 
 1.  Download and install the software and its dependencies. Use the commands appropriate to your system.
     -   Enterprise Linux 6

@@ -32,8 +32,10 @@ The attached Vagrantfile configures three CentOS 7 nodes and a Windows (Nano Ser
 
 
     ```ruby
-    $nodes_count = 3
-    
+    nodes_count = 3
+    ```
+    The result:
+    ```        
     if ENV['NODES'].to_i > 0 && ENV['NODES']
       $nodes_count = ENV['NODES'].to_i
     end
@@ -73,11 +75,11 @@ The attached Vagrantfile configures three CentOS 7 nodes and a Windows (Nano Ser
 
 4. Make sure you can SSH into all of your nodes. If you've used the vagrant nodes before you may have to remove entries from `~/.ssh/known_hosts`.
 
-```
-ssh node1
-ssh node2
-ssh node3
-```
+    ```
+    ssh node1
+    ssh node2
+    ssh node3
+    ```
 
 
 # Using Docker
