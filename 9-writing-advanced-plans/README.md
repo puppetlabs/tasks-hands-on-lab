@@ -129,7 +129,7 @@ Bolt supports a powerful extension mechanism via Puppet functions. These are fun
     ]
     ```
 
-4. Write a function to list the unique volumes across your nodes. A helpful function for this would be `unique`, but [puppetlabs-stdlib] includes a Puppet 3-compatible version that can't be used. Not all Puppet functions can be used with Bolt.
+4. Write a function to list the unique volumes across your nodes and save the function as `modules/exercise9/lib/puppet/functions/unique.rb`. A helpful function for this would be `unique`, but [puppetlabs-stdlib] includes a Puppet 3-compatible version that can't be used. Not all Puppet functions can be used with Bolt.
 
     ```ruby
     Puppet::Functions.create_function(:unique) do
@@ -143,9 +143,7 @@ Bolt supports a powerful extension mechanism via Puppet functions. These are fun
     end
     ```
 
-5. Save the function as `modules/exercise9/lib/puppet/functions/unique.rb`.
-
-6. Write a plan that collects the last column of each line output by `df` (except the header), and prints a list of unique mount points. Save the plan as `modules/exercise9/plans/unique_volumes.pp`.
+5. Write a plan that collects the last column of each line output by `df` (except the header), and prints a list of unique mount points. Save the plan as `modules/exercise9/plans/unique_volumes.pp`.
 
     ```puppet
     plan exercise9::unique_volumes (TargetSpec $nodes) {
