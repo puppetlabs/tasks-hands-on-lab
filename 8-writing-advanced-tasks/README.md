@@ -54,7 +54,8 @@ Write a simple task that formats the parameters a user gives it.
     print(json.dumps(result))
     ```
 
-2. Write the accompanying metadata. Specify the parameters as types such as `"type": "Integer"`  which help validate user input as an `Integer`.  
+2. Write the accompanying metadata and save the file to `modules/exercise8/tasks/great_metadata.json`. Specify the parameters as types such as `"type": "Integer"`  which help validate user input as an `Integer`.  
+
     ```
     {
       "description": "An exercise in writing great metadata",
@@ -80,14 +81,16 @@ Write a simple task that formats the parameters a user gives it.
       }
     }
     ```
-3. Save the file to `modules/exercise8/tasks/great_metadata.json`.
 
 # Using your task with metadata
 
 1. Run 'bolt task show' to verify that the task you created appears with its description in the list of available tasks.
 
     ```
-    $ bolt task show --modulepath ./modules
+    bolt task show --modulepath ./modules
+    ```
+    The result:
+    ```     
     ...
     exercise8::great_metadata     An exercise in writing great metadata
     facter_task                   Inspect the value of system facts
@@ -98,8 +101,11 @@ Write a simple task that formats the parameters a user gives it.
 2. Run `bolt task show <task-name>` to view the parameters that your task uses.
 
     ```
-    $ bolt task show exercise8::great_metadata --modulepath ./modules
-    exercie8::great_metadata - An exercise in writing great metadata
+    bolt task show exercise8::great_metadata --modulepath ./modules
+    ```
+    The result:
+    ```    
+    exercise8::great_metadata - An exercise in writing great metadata
     
     USAGE:
     bolt task run --nodes, -n <node-name> exercise8::great_metadata name=<value> [user=<value>] password=<value> action=<value>
@@ -122,15 +128,20 @@ Bolt can use the types that you have specified in your metadata to validate para
 1. Run your task and pass the following parameters as a JSON string.
 
     ```
-    $ bolt task run exercise8::great_metadata --nodes all --modulepath ./modules --params '{"name":"poppey","action":"spinach","recursive":true}'
+    bolt task run exercise8::great_metadata --nodes all --modulepath ./modules --params '{"name":"poppey","action":"spinach","recursive":true}'
+    ```
+    The result:
+    ```     
     Task exercise8::great_metadata:
      parameter 'action' expects a match for Enum['restart', 'start', 'stop'], got 'spinach'
     ```
 
 2. Correct the value for the action parameter and run the task again.
     ```
-    $ bolt task run exercise8::great_metadata --nodes all --modulepath ./modules --params '{"name":"poppey","action":"start","recursive":true}'
-    
+    bolt task run exercise8::great_metadata --nodes all --modulepath ./modules --params '{"name":"poppey","action":"start","recursive":true}'
+    ```
+    The result:
+    ```     
       {
         "message": "Congratulations on writing your metadata!  Here are the keys and the values that you passed to this task.",
         "parameters": [
@@ -238,7 +249,7 @@ You can write tasks that support no-operation mode (noop). You use noop to see w
 
 3. Test the task with the `--noop` flag.
     ```
-    $ bolt task run exercise8::file --nodes all --modulepath ./modules content=Hello_World filename=/tmp/hello_world --noop
+    bolt task run exercise8::file --nodes all --modulepath ./modules content=Hello_World filename=/tmp/hello_world --noop
       {
         "_noop": true,
         "success": true
@@ -246,10 +257,12 @@ You can write tasks that support no-operation mode (noop). You use noop to see w
     Ran on 1 node in 0.64 seconds
     ```
     
-    Now if we run again without `--noop` we can see the task creating the file successfully.
+4. Run the task again without `--noop` and see the task create the file successfully.
     ```
-    $ bolt task run exercise8::file --nodes all --modulepath ./modules content=Hello_World filename=/tmp/hello_world
-      {
+    bolt task run exercise8::file --nodes all --modulepath ./modules content=Hello_World filename=/tmp/hello_world
+    ```
+    The result:
+    ```       {
         "success": true
       }
     Ran on 1 node in 0.63 second

@@ -24,7 +24,7 @@ To run a command against a remote Linux node, use the following command syntax:
 bolt command run <command> --nodes <nodes>
 ```
 
-To run a command against a remote node using a username and password rather than keys use the following command syntax:
+To run a command against a remote node using a username and password rather than keys use the following syntax:
 ```
 bolt command run <command> --nodes <nodes> --user <user> --password <password>
 ```
@@ -32,7 +32,10 @@ bolt command run <command> --nodes <nodes> --user <user> --password <password>
 1. Run the `uptime` command to view how long the system has been running. If you are using existing nodes on your system, replace `node1` with the address for your node.
 
     ```
-    $ bolt command run uptime --nodes node1
+    bolt command run uptime --nodes node1
+    ```
+    The result:
+    ```
     Started on node1...
     Finished on node1:
       STDOUT:
@@ -44,7 +47,10 @@ bolt command run <command> --nodes <nodes> --user <user> --password <password>
 2. Run the 'uptime' command on multiple nodes by passing a comma-separated list. If you are using existing nodes on your system, replace `node1,node2,node3` with addresses for your nodes. If you get an error about `Host key verification` run the rest of the examples with the `--no-host-key-check` flag to disable host key verification.
 
     ```
-    $ bolt command run uptime --nodes node1,node2,node3
+    bolt command run uptime --nodes node1,node2,node3
+    ```
+    The result:
+    ```
     Started on node1...
     Started on node2...
     Started on node3...
@@ -111,7 +117,7 @@ bolt command run <command> --no-ssl --nodes winrm://<node>,winrm://<node> --user
     bolt command run "gps | select ProcessName" --nodes $WINNODE
     ```
 
-3.  Run the following command to list all of the processes running on multiple remote machines.
+    Use following syntax to list all of the processes running on multiple remote machines.
 
     ```
     bolt command run <command> --nodes winrm://<node>,winrm://<node> --user <user> --password <password>

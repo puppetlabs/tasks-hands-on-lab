@@ -31,7 +31,10 @@ Run the [bashcheck](https://github.com/hannob/bashcheck) script to check on Shel
 2. Run the script using the command `bolt script run <script-name> <script options>`. This uploads the script to the nodes you have specified. 
 
     ```
-    $ bolt script run bashcheck --nodes all
+    bolt script run bashcheck --nodes all
+    ```
+    The result:
+    ```    
     Started on node1...
     Finished on node1:
       STDOUT:
@@ -64,7 +67,10 @@ Create a simple PowerShell script to test connectivity to a known website.
 2. Run the script using the command `bolt script run <script-name> <script options>`. This uploads the script to the nodes you have specified, ensures its executable, runs it, and returns output to the console.
 
     ```
-    $ bolt script run testconnection.ps1 -n $WINNODE
+    bolt script run testconnection.ps1 -n $WINNODE
+    ```
+    The result:
+    ```    
     Started on localhost...
     Finished on localhost:
       STDOUT:

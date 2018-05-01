@@ -45,9 +45,7 @@ This exercise uses `sh`, but you can use Perl, Python, Lua, or JavaScript or any
     ```
     bolt task run exercise5 message=hello --nodes all --modulepath ./modules
     ```
-    
-    The output result is similar to:
-    
+    The result:
     ```
     Started on node1...
     Finished on node1:
@@ -62,7 +60,7 @@ This exercise uses `sh`, but you can use Perl, Python, Lua, or JavaScript or any
 
 If you're targeting Windows nodes then you might prefer to implement the task in PowerShell. 
 
-1. save the following file as `modules/exercise5/tasks/print.ps1`
+1. Save the following file as `modules/exercise5/tasks/print.ps1`
 
     ```powershell
     Write-Output "$env:computername received the message: $env:PT_message"
@@ -113,8 +111,11 @@ Note that Bolt assumes that the required runtime is already available on the tar
 2. Run the task using the command `bolt task run <task-name> <task options>`.
 
     ```
-    $ bolt task run exercise5::gethost host=google.com --nodes all --modulepath ./modules
-    Started on node1...
+    bolt task run exercise5::gethost host=google.com --nodes all --modulepath ./modules
+    ```
+    The result:
+    ```
+        Started on node1...
     Finished on node1:
       google.com is available at 216.58.204.14 on localhost.localdomain
       {

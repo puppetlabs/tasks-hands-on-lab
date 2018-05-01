@@ -38,7 +38,10 @@ Create a simple plan that runs a command on a list of nodes.
 2. Run the plan:
 
     ```
-    $ bolt plan run exercise7::command nodes=all --modulepath ./modules
+    bolt plan run exercise7::command nodes=all --modulepath ./modules
+    ```
+    The result:
+    ```    
     2018-02-16T15:35:47.843668 INFO   Bolt::Executor: Starting command run 'uptime' on ["node1"]
     2018-02-16T15:35:48.154690 INFO   Bolt::Executor: Ran command 'uptime' on 1 node with 0 failures
     [
@@ -64,7 +67,7 @@ Create a simple plan that runs a command on a list of nodes.
 # Write a plan using run_task
 Create a task and then create a plan that uses the task.
 
-1. Save the following task as `modules/exercise7/tasks/write.sh`. The task accepts a filename and some content and saves a file to 1`/tmp`.
+1. Save the following task as `modules/exercise7/tasks/write.sh`. The task accepts a filename and some content and saves a file to `/tmp`.
     
     ```bash
     #!/bin/sh

@@ -24,7 +24,9 @@ In the previous exercise you ran tasks and commands within the context of a plan
 * A plan that uses a task to check how long since a machine was last rebooted, and then runs another task to reboot the machine on nodes that have been up for more than a week.
 * A plan that uses a task to identify the operating system of a machine and then run a different task on each different operating system.
 
-1. Create a task that will print a JSON structure with an `answer` key with a value of true or false. The important thing to note is the use of JSON to structure our return value. 
+1. Create a task that prints a JSON structure with an `answer` key with a value of true or false. Save the task as `modules/exercise9/tasks/yesorno.py`.
+    
+    **Note:** JSON is used to structure the return value. 
 
     ```python
     #!/usr/bin/env python
@@ -40,7 +42,6 @@ In the previous exercise you ran tasks and commands within the context of a plan
     
     print(json.dumps({'answer': bool(random.getrandbits(1))}))
     ```
-2. Save the task as `modules/exercise9/tasks/yesorno.py`.
 
 3. Create a plan and save it as `modules/exercise9/plans/yesorno.pp`:
 
@@ -65,9 +66,7 @@ In the previous exercise you ran tasks and commands within the context of a plan
     ```bash
     bolt plan run exercise9::yesorno nodes=all --modulepath ./modules
     ```
-    
-    When run you should see output like the following. Running it multiple times should result in different output. As the return value of the task is random, the command should run on a different subset of nodes each time.
-    
+    The result:
     ```bash
     [
       {
@@ -90,6 +89,7 @@ In the previous exercise you ran tasks and commands within the context of a plan
       }
     ]
     ```
+    **Note:** Running the plan multiple times results in different output. As the return value of the task is random, the command runs on a different subset of nodes each time.
 
 # Write a plan with custom Ruby functions
 
@@ -113,14 +113,12 @@ Bolt supports a powerful extension mechanism via Puppet functions. These are fun
     git clone https://github.com/puppetlabs/puppetlabs-stdlib ./modules/stdlib
     ```
 
-3. Run the plan to see what happens:
+3. Run the plan.
 
     ```bash
     bolt plan run exercise9::count_volumes nodes=all --modulepath ./modules
     ```
-
-    You should see output like the following:
-    
+    The result:
     ```bash
     2018-02-22T15:33:21.666706 INFO   Bolt::Executor: Starting command run 'df -h' on ["node1", "node2", "node3"]
     2018-02-22T15:33:21.980383 INFO   Bolt::Executor: Ran command 'df -h' on 3 nodes with 0 failures
@@ -168,9 +166,7 @@ Bolt supports a powerful extension mechanism via Puppet functions. These are fun
     ```bash
     bolt plan run exercise9::unique_volumes nodes=all --modulepath ./modules
     ```
-    
-    You should see output like the following:
-    
+    The result:
     ```bash
     2018-02-22T15:48:51.992621 INFO   Bolt::Executor: Starting command run 'df' on ["node1", "node2", "node3"]
     2018-02-22T15:48:52.305331 INFO   Bolt::Executor: Ran command 'df' on 3 nodes with 0 failures
@@ -192,6 +188,7 @@ For more information on writing custom functions, see [Puppet's custom function 
 By default, any task or command that fails causes a plan to abort immediately. You must add error handling to a plan to prevent it from stopping this way. 
 
 1. Save the following plan as `modules/exercise9/plans/error.pp`. This plan runs a command that fails (`false`) and collects the result. It then uses the `ok` function to check if the command succeeded on every node, and prints a message based on that.
+
     ```puppet
     plan exercise9::error (TargetSpec $nodes) {
       $results = run_command('false', $nodes)
@@ -209,9 +206,7 @@ By default, any task or command that fails causes a plan to abort immediately. Y
     ```bash
     bolt plan run exercise9::error nodes=all --modulepath ./modules
     ```
-
-    You should see output like the following:
-    
+    The result:
     ```bash
     Plan aborted: run_command 'false' failed on 3 nodes
     [...]
@@ -232,13 +227,12 @@ By default, any task or command that fails causes a plan to abort immediately. Y
     }
     ```
 
-2. Run the plan. 
+2. Run the plan and execute the `notice` statement.
+
     ```bash
     bolt plan run exercise9::catch_error nodes=all --modulepath ./modules
     ```
-
-    Now the `notice` statement gets executed and we see our output:
-    
+    The result:
     ```bash
     Notice: Scope(<module>/exercise9/plans/catch_error.pp, 7): The command failed
     ```

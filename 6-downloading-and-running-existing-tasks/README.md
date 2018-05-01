@@ -78,7 +78,10 @@ Committing modules directly to the control repo is useful while you develop new 
 - Run the 'bolt task show' command to view a list of the tasks installed in the previous exercise.
 
     ```
-    $ bolt task show
+    bolt task show
+    ```
+    The result:
+    ```    
     apache                        Allows you to perform apache service functions
     apt                           Allows you to perform apt functions
     bootstrap                     Bootstrap a node with puppet-agent
@@ -106,7 +109,10 @@ Committing modules directly to the control repo is useful while you develop new 
 1. Run `bolt task show package` to view the parameters that the package task uses. 
 
     ```
-    $ bolt task show package
+    bolt task show package
+    ```
+    The result:
+    ```    
     package - Manage and inspect the state of packages
     
     USAGE:
@@ -127,7 +133,10 @@ Committing modules directly to the control repo is useful while you develop new 
 2.  Using parameters for the package task, check on the status of the bash package:
 
     ```
-    $ bolt task run package action=status name=bash --nodes all
+    bolt task run package action=status name=bash --nodes all
+    ```
+    The result:
+    ```    
     Started on node1...
     Finished on node1:
       {
@@ -139,7 +148,10 @@ Committing modules directly to the control repo is useful while you develop new 
 3.  Using parameters for the package task, install the vim package across all your nodes:
 
     ```
-    $ bolt task run package action=install name=vim --nodes all --run-as root
+    bolt task run package action=install name=vim --nodes all --run-as root
+    ```
+    The result:
+    ```
     Started on node1...
     Finished on node1:
       {
