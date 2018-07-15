@@ -33,10 +33,10 @@ This lesson covers everything you need to install Bolt on your machine. Just sel
 
     **Tip:** To find the macOS version number on your Mac, go to the Apple \(\) menu in the corner of your screen and choose **About This Mac**.
 
-    -   10.11 \(El Capitan\) [https://downloads.puppet.com/mac/puppet5/10.11/x86\_64/bolt-latest.dmg](https://downloads.puppet.com/mac/puppet5/10.11/x86_64/bolt-latest.dmg)
-    -   10.12 \(Sierra\) [https://downloads.puppet.com/mac/puppet5/10.12/x86\_64/bolt-latest.dmg](https://downloads.puppet.com/mac/puppet5/10.12/x86_64/bolt-latest.dmg)
-    -   10.13 \(High Sierra\) [https://downloads.puppet.com/mac/puppet5/10.13/x86\_64/bolt-latest.dmg](https://downloads.puppet.com/mac/puppet5/10.13/x86_64/bolt-latest.dmg)
-2.  Double-click the `bolt-latest.dmg` file to mount it and then double-click the `bolt-[version]-installer.pkg` to run the installation.
+    -   10.11 \(El Capitan\) [https://downloads.puppet.com/mac/puppet5/10.11/x86\_64/puppet-bolt-latest.dmg](https://downloads.puppet.com/mac/puppet5/10.11/x86_64/puppet-bolt-latest.dmg)
+    -   10.12 \(Sierra\) [https://downloads.puppet.com/mac/puppet5/10.12/x86\_64/puppet-bolt-latest.dmg](https://downloads.puppet.com/mac/puppet5/10.12/x86_64/puppet-bolt-latest.dmg)
+    -   10.13 \(High Sierra\) [https://downloads.puppet.com/mac/puppet5/10.13/x86\_64/puppet-bolt-latest.dmg](https://downloads.puppet.com/mac/puppet5/10.13/x86_64/puppet-bolt-latest.dmg)
+2.  Double-click the `puppet-bolt-latest.dmg` file to mount it and then double-click the `puppet-bolt-[version]-installer.pkg` to run the installation.
 3.  Run a Bolt command to verify it has installed correctly.  
 
     ```
