@@ -75,6 +75,8 @@ The result:
 
 # View and use parameters for a specific task
 
+**Note**: All other built in tasks currently rely on the puppet agent being installed on the remote target. We're working on removing this dependency. For now ensure that the task above to install agents ran successfully before proceeding.
+
 1. Run `bolt task show package` to view the parameters that the package task uses. 
 
     ```
