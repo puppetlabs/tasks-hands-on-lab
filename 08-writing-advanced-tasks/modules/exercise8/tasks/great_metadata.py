@@ -6,8 +6,12 @@ return a JSON string with a parameters key containing objects that describe
 the parameters passed by the user.
 """
 
-import json
 import sys
+
+if sys.version_info[0] == 2 and sys.version_info[1] < 5:
+    import simplejson as json
+else:
+    import json
 
 def make_serializable(object):
   if sys.version_info[0] > 2:
