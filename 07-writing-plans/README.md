@@ -18,7 +18,7 @@ Complete the following before you start this lesson:
 
 # About Plans 
 
-Use plans when you want to run several commands together across multiple nodes. For instance to remove a node from a load balancer before you deploy the new version of the application, or to clear a cache after you re-index a search engine.
+Use plans when you want to run several tasks or commands together on one or across multiple nodes. For instance to remove a node from a load balancer before you deploy the new version of the application, or to clear a cache after you re-index a search engine.
 
 You can link a set of commands, scripts, and tasks together, and add parameters to them so they are easy to reuse. While you write plans in the Puppet language, you don't need to install Puppet to use them.
 
@@ -85,35 +85,67 @@ Create a task and then create a plan that uses the task.
     **Note:** In this case the task doesn't output anything to stdout. It can be useful to trace the running of the task, and for that the `--debug` flag is useful. Here is the output when run with debug:
     
     ```
-    Did not find config for node1 in inventory
+    Loaded inventory from /root/.puppetlabs/bolt/inventory.yaml
+    Submitting analytics: {
+      "v": 1,
+      "cid": "65a2ca04-65ee-4426-beba-5e96d1c31ae3",
+      "tid": "UA-120367942-1",
+      "an": "bolt",
+      "av": "1.19.0",
+      "aip": true,
+      "ul": "en-US",
+      "cd1": "CentOS 7",
+      "t": "screenview",
+      "cd": "task_run",
+      "cd5": "human",
+      "cd4": 1,
+      "cd2": 1,
+      "cd3": 1
+    }
+    Loading modules from /opt/puppetlabs/bolt/lib/ruby/gems/2.5.0/gems/bolt-1.19.0/bolt-modules:/root/tasks-hands-on-lab/modules:/opt/puppetlabs/bolt/lib/ruby/gems/2.5.0/gems/bolt-1.19.0/modules
     Started with 100 max thread(s)
-    ModuleLoader: module 'boltlib' has unknown dependencies - it will have all other modules visible
-    Did not find config for node1 in inventory
     Starting: task exercise7::write on node1
-    Authentication method 'gssapi-with-mic' is not available
-    Running task exercise7::write with '{"filename"=>"hello", "message"=>"world"}' via  on ["node1"]
+    Authentication method 'gssapi-with-mic' (Kerberos) is not available.
+    Submitting analytics: {
+      "v": 1,
+      "cid": "65a2ca04-65ee-4426-beba-5e96d1c31ae3",
+      "tid": "UA-120367942-1",
+      "an": "bolt",
+      "av": "1.19.0",
+      "aip": true,
+      "ul": "en-US",
+      "cd1": "CentOS 7",
+      "t": "event",
+      "ec": "Transport",
+      "ea": "initialize",
+      "el": "ssh",
+      "ev": 1
+    }
+    Running task exercise7::write with '{"filename"=>"hello", "message"=>"world", "_task"=>"exercise7::write"}' on ["node1"]
+    Running task run '#<struct Bolt::Task name="exercise7::write", file=nil, files=[{"name"=>"write.sh", "path"=>"/root/tasks-hands-on-lab/modules/exercise7/tasks/write.sh"}], metadata={}>' on node1
     Started on node1...
-    Running task run 'Task({'name' => 'exercise7::write', 'implementations' => [{'name' => 'write.sh', 'path' => '/Users/username/puppetlabs/tasks-hands-on-lab/07-writing-plans/modules/exercise7/tasks/write.sh', 'requirements' => []}], 'input_method' => undef})' on node1
+    Disabling use_agent in net-ssh: ssh-agent is not available
+    Completed analytics submission
+    Completed analytics submission
     Opened session
-    Executing: mktemp -d
-    stdout: /tmp/tmp.mJo9THENdL
-
+    Running '/root/tasks-hands-on-lab/modules/exercise7/tasks/write.sh' with {"filename"=>"hello", "message"=>"world", "_task"=>"exercise7::write"}
+    Executing: mkdir -m 700 /tmp/03d388ac-e47a-4f24-bd39-eecee4c4d0cd
     Command returned successfully
-    Executing: chmod u\+x /tmp/tmp.mJo9THENdL/write.sh
+    Executing: chmod u\+x /tmp/03d388ac-e47a-4f24-bd39-eecee4c4d0cd/write.sh
     Command returned successfully
-    Executing: PT_filename=hello PT_message=world /tmp/tmp.mJo9THENdL/write.sh
+    Executing: PT_filename=hello PT_message=world PT__task=exercise7::write /tmp/03d388ac-e47a-4f24-bd39-eecee4c4d0cd/write.sh
     Command returned successfully
-    Executing: rm -rf /tmp/tmp.mJo9THENdL
+    Executing: rm -rf /tmp/03d388ac-e47a-4f24-bd39-eecee4c4d0cd
     Command returned successfully
     Closed session
+    {"node":"node1","target":"node1","type":"task","object":"exercise7::write","status":"success","result":{"_output":""}}
     Finished on node1:
-     {"node":"node1","status":"success","result":{"_output":""}}
-
+    
       {
       }
-    Finished: task exercise7::write with 0 failures in 0.89 sec
+    Finished: task exercise7::write with 0 failures in 0.67 sec
     Successful on 1 node: node1
-    Ran on 1 node in 0.97 seconds
+    Ran on 1 node in 0.74 seconds
     ```
 3. Write a plan that uses the task you created. Save the following as `modules/exercise7/plans/writeread.pp`:
 

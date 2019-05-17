@@ -97,9 +97,10 @@ Write a simple task that formats the parameters a user gives it.
     The result:
     ```     
     ...
-    exercise8::great_metadata     An exercise in writing great metadata
-    facter_task                   Inspect the value of system facts
-    install_puppet                Install the puppet 5 agent package
+    exercise8::great_metadata   An exercise in writing great metadata
+    facts                       Gather system facts
+    package                     Manage and inspect the state of packages
+    puppet_agent::install       Install the Puppet agent package
     ...
     ```
 
@@ -113,7 +114,7 @@ Write a simple task that formats the parameters a user gives it.
     exercise8::great_metadata - An exercise in writing great metadata
 
     USAGE:
-    bolt task run --nodes <node-name> exercise8::great_metadata name=<value> recursive=<value> action=<value> timeout=<value> [--noop]
+    bolt task run --nodes <node-name> exercise8::great_metadata name=<value> recursive=<value> action=<value> timeout=<value>
 
     PARAMETERS:
     - name: String

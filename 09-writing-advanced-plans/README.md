@@ -81,10 +81,12 @@ In the previous exercise you ran tasks and commands within the context of a plan
     ```
     The result:
     ```
+    Starting: plan exercise9::yesorno
     Starting: task exercise9::yesorno on node1, node2, node3
-    Finished: task exercise9::yesorno with 0 failures in 0.97 sec
+    Finished: task exercise9::yesorno with 0 failures in 0.66 sec
     Starting: command 'uptime' on node2, node3
     Finished: command 'uptime' with 0 failures in 0.39 sec
+    Finished: plan exercise9::yesorno in 0.93 sec
     Plan completed successfully with no result
     ```
     **Note:** Running the plan multiple times results in different output. As the return value of the task is random, the command runs on a different subset of nodes each time.
@@ -100,7 +102,8 @@ Bolt supports a powerful extension mechanism via Puppet functions. These are fun
       $result = run_command('df', $nodes)
       return $result.map |$r| {
         $line_count = $r['stdout'].split("\n").length - 1
-        "${$r.target.name} has ${$line_count} volumes"
+        $node_name = $r.target.name
+        "$node_name has ${$line_count} volumes"
       }
     }
     ```
@@ -118,8 +121,10 @@ Bolt supports a powerful extension mechanism via Puppet functions. These are fun
     ```
     The result:
     ```
+    Starting: plan exercise9::count_volumes
     Starting: command 'df' on node1, node2, node3
     Finished: command 'df' with 0 failures in 0.5 sec
+    Finished: plan exercise9::count_volumes in 0.35 sec
     [
       "node1 has 7 volumes",
       "node2 has 7 volumes",
@@ -164,8 +169,10 @@ Bolt supports a powerful extension mechanism via Puppet functions. These are fun
     ```
     The result:
     ```
+    Starting: plan exercise9::unique_volumes
     Starting: command 'df' on node1, node2, node3
     Finished: command 'df' with 0 failures in 0.53 sec
+    Finished: plan exercise9::unique_volumes in 0.55 sec
     [
       "/",
       "/dev",
@@ -204,8 +211,10 @@ By default, any task or command that fails causes a plan to abort immediately. Y
     ```
     The result:
     ```
+    Starting: plan exercise9::error
     Starting: command 'false' on node1, node2, node3
     Finished: command 'false' with 3 failures in 0.53 sec
+    Finished: plan exercise9::error in 0.54 sec
     {
       "kind": "bolt/run-failure",
       "msg": "Plan aborted: run_command 'false' failed on 3 nodes",
@@ -239,9 +248,11 @@ By default, any task or command that fails causes a plan to abort immediately. Y
     ```
     The result:
     ```
+    Starting: plan exercise9::catch_error
     Starting: command 'false' on node1, node2, node3
     Finished: command 'false' with 3 failures in 0.47 sec
     The command failed
+    Finished: plan exercise9::catch_error in 0.48 sec
     Plan completed successfully with no result
     ```
 
@@ -250,7 +261,7 @@ By default, any task or command that fails causes a plan to abort immediately. Y
 # Next steps
 Now that you have learned about writing advanced plans you can deploy an app with bolt! 
 
-[Deploying and Application](../10-deploying-an-application)
+[Deploying an Application](../10-deploying-an-application)
 
 
 [puppetlabs-stdlib]: https://github.com/puppetlabs/puppetlabs-stdlib
