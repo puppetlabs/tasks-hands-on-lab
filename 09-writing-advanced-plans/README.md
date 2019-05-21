@@ -103,7 +103,7 @@ Bolt supports a powerful extension mechanism via Puppet functions. These are fun
       return $result.map |$r| {
         $line_count = $r['stdout'].split("\n").length - 1
         $node_name = $r.target.name
-        "$node_name has ${$line_count} volumes"
+        "$node_name has $line_count volumes"
       }
     }
     ```

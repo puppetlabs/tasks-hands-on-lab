@@ -329,7 +329,7 @@ The result (when simulated load is above threshold)
 Starting: plan my_app::deploy
 Starting: Check load before starting deploy on node1
 Finished: Check load before starting deploy with 0 failures in 0.89 sec
-inished: plan my_app::deploy in 0.90 sec
+Finished: plan my_app::deploy in 0.90 sec
 {
   "kind": "bolt/plan-failure",
   "msg": "The appplication has too many open connections: 10",
