@@ -22,7 +22,7 @@ Complete the following before you start this lesson:
 
 # How do tasks work?
 
-Tasks are similar to scripts, you can implement them in any language that runs on your target nodes. But tasks are kept in modules and can have metadata. This allows you to reuse and share them more easily. You can upload and download tasks as modules from the [Puppet Forge](https://forge.puppet.com/), run them from GitHub or use them locally to organize your regularly used commands.
+Tasks are similar to scripts, you can implement them in any language that runs on your target nodes. But tasks are kept in modules and can have metadata. (In fact, metadata is *required* for Tasks with parameters to run from the Puppet Enterprise web console.) This allows you to reuse and share them more easily. You can upload and download tasks as modules from the [Puppet Forge](https://forge.puppet.com/), run them from GitHub or use them locally to organize your regularly used commands.
 
 Tasks are stored in the `tasks` directory of a module, a module being a directory with a unique name. You can have several tasks per module, but the `init` task is special and runs by default if you do not specify a task name.
 
