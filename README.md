@@ -1,5 +1,7 @@
 # Puppet Tasks Hands-on Lab
 
+*This repository is deprecated. The source for the Bolt website now lives at [puppetlabs/bolt](https://github.com/puppetlabs/bolt/tree/master/docs).*
+
 ## Introduction
 
 This repository contains a step-by-step introduction to [Bolt](https://github.com/puppetlabs/bolt) and to the Puppet Tasks ecosystem. It's designed to be followed in order, with each exercise introducing the basic concepts. If you complete all of the exercises you should be well on your way to understanding how you can use Bolt and Puppet Tasks to help manage your infrastructure.  
